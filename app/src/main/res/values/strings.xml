@@ -3,4 +3,11 @@
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
     <string name="button_login">Login</string>
+    <string name="create_acount">Create Account</string>
+    <string name="hint_firstName">First Name</string>
+    <string name="hint_idNumber">ID Number</string>
+    <string name="account_login">Login to Account</string>
+    <string name="hint_lastName">Last Name</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
 </resources>

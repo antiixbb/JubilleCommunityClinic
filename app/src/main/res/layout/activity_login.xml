@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     android:padding="16dp"
     tools:context=".LoginActivity">
 
@@ -14,38 +15,58 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:textSize="24sp"
+        android:textSize="32sp"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:layout_marginBottom="16dp"/>
 
     <!-- Email Input -->
-    <EditText
-        android:id="@+id/editTextEmail"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_email"
-        android:autofillHints="emailAddress"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Password Input -->
-    <EditText
-        android:id="@+id/editTextPassword"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_password"
-        android:autofillHints="password"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_password"
+            android:inputType="textPassword"
+            android:minHeight="48dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Login Button -->
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_login"/>
+        android:text="@string/button_login"
+        android:minHeight="48dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Create Account Text -->
+    <TextView
+        android:id="@+id/textCreateAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_acount"
+        android:textSize="18sp"
+        android:textColor="?attr/colorAccent"
+        android:layout_marginBottom="16dp"/>
 
 </LinearLayout>
