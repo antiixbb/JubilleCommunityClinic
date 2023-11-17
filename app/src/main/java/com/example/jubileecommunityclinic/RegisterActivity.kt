@@ -94,7 +94,8 @@ class RegisterActivity : AppCompatActivity() {
                             }
                     }
 
-                    // You can add further actions after successful registration here
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
 
                 } else {
                     Log.w("RegisterActivity", "createUserWithEmail:failure", task.exception)

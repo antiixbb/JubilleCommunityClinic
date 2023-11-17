@@ -10,4 +10,6 @@
     <string name="hint_lastName">Last Name</string>
     <string name="hint_confirm_password">Confirm Password</string>
     <string name="register">Register</string>
+    <string name="user_id">User ID:</string>
+    <string name="id_number">ID Number:</string>
 </resources>
