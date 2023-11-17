@@ -1,4 +1,6 @@
 <resources>
-    <string name="app_name">JubileeCommunityClinic</string>
-    <string name="git_test">Working</string>
+    <string name="app_name">Jubilee Community Clinic</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="button_login">Login</string>
 </resources>
