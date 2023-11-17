@@ -45,8 +45,10 @@ class RegisterActivity : AppCompatActivity() {
             openLogin()
         }
 
-        buttonRegister.setOnClickListener{
-            Log.d("Valid Registration", "${isValidRegistration()}")
+        buttonRegister.setOnClickListener {
+            if (isValidRegistration()) {
+                registerUser()
+            }
         }
     }
 
@@ -57,10 +59,49 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     //Registers a new user with Firebase Authentication
-    private fun registerUser()
-    {
+    private fun registerUser() {
+        val email = editTextEmail.text.toString().trim()
+        val password = editTextPassword.text.toString().trim()
+        val firstName = editTextFirstName.text.toString().trim()
+        val lastName = editTextLastName.text.toString().trim()
+        val idNumber = editTextIDNumber.text.toString().trim()
 
+        // Create user in Firebase Authentication
+        Firebase.auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // User creation successful, now save additional info in Firestore
+                    //Gets the UID of the new user
+                    val user = Firebase.auth.currentUser
+                    val uid = user?.uid
+
+                    //Creates a hashmap for the document
+                    val userInfo = hashMapOf(
+                        "firstName" to firstName,
+                        "lastName" to lastName,
+                        "idNumber" to idNumber
+                    )
+
+                    //Sets the document id to the UID of the new user and adds the document to the collection
+                    uid?.let {
+                        Firebase.firestore.collection("userInfo").document(it)
+                            .set(userInfo)
+                            .addOnSuccessListener {
+                                Log.d("RegisterActivity", "User information saved successfully")
+                            }
+                            .addOnFailureListener { e ->
+                                Log.e("RegisterActivity", "Error saving user information", e)
+                            }
+                    }
+
+                    // You can add further actions after successful registration here
+
+                } else {
+                    Log.w("RegisterActivity", "createUserWithEmail:failure", task.exception)
+                }
+            }
     }
+
 
     //Checks that all input fields are valid
     private fun isValidRegistration(): Boolean {
@@ -101,8 +142,8 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         // Check if ID number is exactly 10 digits long
-        if (idNumber.length != 10) {
-            editTextIDNumber.error = "ID number must be 10 digits"
+        if (idNumber.length != 13) {
+            editTextIDNumber.error = "ID number must be 13 digits"
             return false
         }
 
