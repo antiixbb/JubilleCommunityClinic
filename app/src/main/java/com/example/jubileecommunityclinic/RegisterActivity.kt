@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
@@ -25,10 +26,6 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-
-        //Firebase
-        val db = Firebase.firestore
-        val auth = Firebase.auth
 
         //Views
         editTextEmail = findViewById(R.id.editTextEmail)
@@ -71,18 +68,18 @@ class RegisterActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // User creation successful, now save additional info in Firestore
-                    //Gets the UID of the new user
+                    // Gets the UID of the new user
                     val user = Firebase.auth.currentUser
                     val uid = user?.uid
 
-                    //Creates a hashmap for the document
+                    // Creates a hashmap for the document
                     val userInfo = hashMapOf(
                         "firstName" to firstName,
                         "lastName" to lastName,
                         "idNumber" to idNumber
                     )
 
-                    //Sets the document id to the UID of the new user and adds the document to the collection
+                    // Sets the document id to the UID of the new user and adds the document to the collection
                     uid?.let {
                         Firebase.firestore.collection("userInfo").document(it)
                             .set(userInfo)
@@ -96,12 +93,16 @@ class RegisterActivity : AppCompatActivity() {
 
                     val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
-
                 } else {
                     Log.w("RegisterActivity", "createUserWithEmail:failure", task.exception)
+                    Toast.makeText(
+                        this, "Registration failed. ${task.exception?.localizedMessage}",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
     }
+
 
 
     //Checks that all input fields are valid
