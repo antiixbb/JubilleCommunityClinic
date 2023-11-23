@@ -7,13 +7,13 @@
     android:gravity="center"
     android:padding="16dp"
     android:background="@drawable/notext_bkg"
-    tools:context=".PreviousActivity">
+    tools:context=".HomeActivity">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Previous Activities"
+        android:text="Upcoming Activities"
         android:textSize="24sp"
         android:textColor="#FFFFFF"
         android:gravity="center"/>
@@ -26,16 +26,5 @@
         app:itemIconTint="@color/white"
         android:background="@drawable/bg_transparent"
         app:menu="@menu/bottom_navigation_menu"/>
-
-    <ScrollView
-        android:id="@+id/appointment_list"
-        android:layout_width="match_parent"
-        android:layout_height="500dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
 
 </RelativeLayout>
