@@ -34,6 +34,10 @@ class HomeActivity : AppCompatActivity() {
         //Handling the menu
         menu.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
+                R.id.menu_home -> {
+                    startActivity(Intent(this@HomeActivity, HomeActivity::class.java))
+                    true
+                }
                 R.id.menu_booking -> {
                     startActivity(Intent(this@HomeActivity, BookingActivity::class.java))
                     true
