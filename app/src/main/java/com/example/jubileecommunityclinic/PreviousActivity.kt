@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.Firebase
 
 class PreviousActivity : AppCompatActivity() {
 
@@ -52,4 +53,6 @@ class PreviousActivity : AppCompatActivity() {
             }
         }
     }
+
+
 }

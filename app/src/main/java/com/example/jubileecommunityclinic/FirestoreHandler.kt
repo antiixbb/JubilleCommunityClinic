@@ -2,6 +2,8 @@
 import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
 import com.example.jubileecommunityclinic.models.AppointmentRequest
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.firestore.QuerySnapshot
 
 class FirestoreHandler {
 
@@ -18,6 +20,15 @@ class FirestoreHandler {
             }
     }
 
-    // Add other Firestore methods as needed
+    fun getPreviousAppointmentsForUser(
+        userUid: String,
+        onCompleteListener: OnCompleteListener<QuerySnapshot>
+    ) {
+        db.collection("previousAppointments")
+            .whereEqualTo("uid", userUid)
+            .get()
+            .addOnCompleteListener(onCompleteListener)
+
+    }
 
 }
