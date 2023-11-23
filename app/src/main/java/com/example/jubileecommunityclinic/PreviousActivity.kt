@@ -7,9 +7,18 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class PreviousActivity: AppCompatActivity() {
+class PreviousActivity : AppCompatActivity() {
 
-    private lateinit var menu:BottomNavigationView
+    companion object {
+        private val activityToMenuItemMap = mapOf(
+            HomeActivity::class.java to R.id.menu_home,
+            BookingActivity::class.java to R.id.menu_booking,
+            UpcomingActivity::class.java to R.id.menu_upcoming,
+            PreviousActivity::class.java to R.id.menu_previous
+        )
+    }
+
+    private lateinit var menu: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +26,10 @@ class PreviousActivity: AppCompatActivity() {
 
         menu = findViewById(R.id.bottomNavigation)
 
-        //Handling the menu
+        // Set the selected menu item based on the current activity
+        activityToMenuItemMap[this::class.java]?.let { menu.selectedItemId = it }
+
+        // Handling the menu
         menu.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.menu_home -> {
@@ -40,5 +52,4 @@ class PreviousActivity: AppCompatActivity() {
             }
         }
     }
-
 }
