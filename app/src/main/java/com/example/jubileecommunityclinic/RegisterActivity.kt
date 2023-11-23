@@ -76,7 +76,8 @@ class RegisterActivity : AppCompatActivity() {
                     val userInfo = hashMapOf(
                         "firstName" to firstName,
                         "lastName" to lastName,
-                        "idNumber" to idNumber
+                        "idNumber" to idNumber,
+                        "Role" to "Patient"
                     )
 
                     // Sets the document id to the UID of the new user and adds the document to the collection

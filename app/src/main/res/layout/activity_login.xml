@@ -28,6 +28,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextEmail"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#75FFFFFF"
@@ -47,6 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#75FFFFFF"
+            android:textColor="@color/white"
             android:hint="@string/hint_password"
             android:inputType="textPassword"
             android:minHeight="48dp" />

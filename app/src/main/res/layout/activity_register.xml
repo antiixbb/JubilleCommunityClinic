@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="16dp"
-    android:background="@drawable/loginbkg"
+    android:background="@drawable/notext_bkg"
     tools:context=".RegisterActivity">
 
     <TextView
@@ -32,8 +32,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#75FFFFFF"
+            android:textColor="@color/white"
             android:hint="@string/hint_email"
             android:inputType="textEmailAddress"
+            android:textColorHint="@color/white"
             android:minHeight="48dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -45,6 +47,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextPassword"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#75FFFFFF"
@@ -61,6 +64,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextConfirmPassword"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#75FFFFFF"
@@ -71,6 +75,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:textColorHint="@color/black">
@@ -78,6 +83,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextFirstName"
             android:layout_width="match_parent"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:background="#75FFFFFF"
             android:hint="@string/hint_firstName"
@@ -87,12 +93,14 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:layout_marginBottom="16dp"
         android:textColorHint="@color/black">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextLastName"
             android:layout_width="match_parent"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:background="#75FFFFFF"
             android:hint="@string/hint_lastName"
@@ -101,6 +109,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:textColorHint="@color/black">
@@ -112,6 +121,7 @@
             android:background="#75FFFFFF"
             android:hint="@string/hint_idNumber"
             android:inputType="number"
+            android:textColor="@color/white"
             android:minHeight="48dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 

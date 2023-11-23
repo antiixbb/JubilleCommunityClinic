@@ -8,7 +8,7 @@ class FirestoreHandler {
     private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
     fun addAppointmentRequest(appointmentRequest: AppointmentRequest) {
-        db.collection("requestedAppointments")
+        db.collection("acceptedAppointments")
             .add(appointmentRequest)
             .addOnSuccessListener { documentReference ->
                 Log.d("FireStore","Success")
