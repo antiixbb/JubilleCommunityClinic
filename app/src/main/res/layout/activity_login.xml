@@ -18,7 +18,7 @@
         android:textSize="32sp"
         android:textStyle="bold"
         android:layout_gravity="center"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="60dp"/>
 
     <!-- Email Input -->
     <com.google.android.material.textfield.TextInputLayout
@@ -30,6 +30,7 @@
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#75FFFFFF"
             android:hint="@string/hint_email"
             android:inputType="textEmailAddress"
             android:minHeight="48dp" />
@@ -45,9 +46,10 @@
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#75FFFFFF"
             android:hint="@string/hint_password"
             android:inputType="textPassword"
-            android:minHeight="48dp"/>
+            android:minHeight="48dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Login Button -->
@@ -61,13 +63,14 @@
         android:layout_marginBottom="16dp"/>
 
     <!-- Create Account Text -->
-    <TextView
+    <Button
         android:id="@+id/textCreateAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="@string/create_acount"
-        android:textSize="18sp"
-        android:textColor="?attr/colorAccent"
-        android:layout_marginBottom="16dp"/>
+        android:backgroundTint="@color/light_blue"
+        android:textColor="@color/white"
+        android:textSize="13sp" />
 
 </LinearLayout>
