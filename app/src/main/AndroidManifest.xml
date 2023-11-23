@@ -25,6 +25,13 @@
         <activity android:name=".RegisterActivity" />
 
         <activity android:name=".HomeActivity"/>
+
+        <activity android:name=".BookingActivity"></activity>
+
+        <activity android:name=".PreviousActivity"></activity>
+
+        <activity android:name=".UpcomingActivity"></activity>
+
     </application>
 
 </manifest>
