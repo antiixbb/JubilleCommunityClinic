@@ -14,7 +14,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:text="@string/register"
         android:textSize="32sp"
         android:textStyle="bold"
         android:layout_gravity="center"
@@ -30,6 +31,7 @@
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#75FFFFFF"
             android:hint="@string/hint_email"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"/>
@@ -45,6 +47,7 @@
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#75FFFFFF"
             android:hint="@string/hint_password"
             android:inputType="textPassword"
             android:minHeight="48dp"/>
@@ -60,6 +63,7 @@
             android:id="@+id/editTextConfirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#75FFFFFF"
             android:hint="@string/hint_confirm_password"
             android:inputType="textPassword"
             android:minHeight="48dp"/>
@@ -75,6 +79,7 @@
             android:id="@+id/editTextFirstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#75FFFFFF"
             android:hint="@string/hint_firstName"
             android:minHeight="48dp"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -89,6 +94,7 @@
             android:id="@+id/editTextLastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#75FFFFFF"
             android:hint="@string/hint_lastName"
             android:minHeight="48dp"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -103,6 +109,7 @@
             android:id="@+id/editTextIDNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#75FFFFFF"
             android:hint="@string/hint_idNumber"
             android:inputType="number"
             android:minHeight="48dp"/>
@@ -112,17 +119,19 @@
         android:id="@+id/buttonRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/light_blue"
         android:text="@string/register"
         android:minHeight="48dp"
         android:layout_marginBottom="16dp"/>
 
-    <TextView
+    <Button
         android:id="@+id/textLoginToAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/light_blue"
         android:text="@string/account_login"
-        android:textSize="18sp"
-        android:textColor="?attr/colorAccent"
+        android:textSize="13sp"
+        android:textColor="@color/white"
         android:layout_marginBottom="16dp"/>
 
 </LinearLayout>
