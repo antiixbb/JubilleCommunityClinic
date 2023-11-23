@@ -1,8 +1,10 @@
 package com.example.jubileecommunityclinic
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -14,6 +16,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var textViewIDNumber: TextView
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
+    private lateinit var menu: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +29,26 @@ class HomeActivity : AppCompatActivity() {
         // Views
         textViewUID = findViewById(R.id.textViewUID)
         textViewIDNumber = findViewById(R.id.textViewIDNumber)
+        menu = findViewById(R.id.bottomNavigation)
+
+        //Handling the menu
+        menu.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.menu_booking -> {
+                    startActivity(Intent(this@HomeActivity, BookingActivity::class.java))
+                    true
+                }
+                R.id.menu_upcoming -> {
+                    startActivity(Intent(this@HomeActivity, UpcomingActivity::class.java))
+                    true
+                }
+                R.id.menu_previous -> {
+                    startActivity(Intent(this@HomeActivity, PreviousActivity::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
 
         // Display user information
         displayUserInfo()
@@ -59,4 +82,5 @@ class HomeActivity : AppCompatActivity() {
                 println("Error getting documents: $exception")
             }
     }
+
 }

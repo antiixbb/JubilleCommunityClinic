@@ -12,14 +12,14 @@
         />
 
     <item
-        android:id="@+id/menu_delbooking"
-        android:title="Delete Booking"
+        android:id="@+id/menu_upcoming"
+        android:title="Upcoming"
         android:icon="@drawable/ic_bookmark_remove_24"
         />
 
     <item
-        android:id="@+id/menu_bookinginfo"
-        android:title="Booking Info"
+        android:id="@+id/menu_previous"
+        android:title="Previous"
         android:icon="@drawable/ic_book_24"
         />
 </menu>
