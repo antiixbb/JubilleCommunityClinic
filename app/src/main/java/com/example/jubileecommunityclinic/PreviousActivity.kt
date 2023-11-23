@@ -39,14 +39,6 @@ class PreviousActivity: AppCompatActivity() {
                 else -> false
             }
         }
-        val sharedPrefs: SharedPreferences = getPreferences(Context.MODE_PRIVATE)
-        menu.selectedItemId = getSavedSelectedItemId()
-    }
-    private fun saveSelectedItemId(itemId: Int) {
-        sharedPrefs.edit().putInt("selectedItemId", itemId).apply()
     }
 
-    private fun getSavedSelectedItemId(): Int {
-        return sharedPrefs.getInt("selectedItemId", R.id.menu_home)
-    }
 }
