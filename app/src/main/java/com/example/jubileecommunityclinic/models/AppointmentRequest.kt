@@ -8,5 +8,6 @@ data class AppointmentRequest(
     val lastName: String,     // User's Last Name
     val requestedDate: String, // Requested Date
     val requestedTime: String, // Requested Time
-    val dateOfRequest: String  // Date of Request
+    val dateOfRequest: String,  // Date of Request
+    val requestStatus: String
 )
