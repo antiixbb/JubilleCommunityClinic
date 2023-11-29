@@ -1,3 +1,5 @@
+package com.example.jubileecommunityclinic
+
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.auth.FirebaseAuth
 import org.junit.Test
