@@ -9,6 +9,7 @@ class FirestoreHandler {
 
     private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
+    // created funtion to work with firebase
     fun addAppointmentRequest(appointmentRequest: AppointmentRequest) {
         db.collection("acceptedAppointments")
             .add(appointmentRequest)
@@ -20,6 +21,7 @@ class FirestoreHandler {
             }
     }
 
+    // created funtion to work with firebase
     fun getPreviousAppointmentsForUser(
         userUid: String,
         onCompleteListener: OnCompleteListener<QuerySnapshot>

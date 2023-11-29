@@ -35,6 +35,7 @@ class DateFragment : Fragment() {
             selectedDate = String.format(Locale.getDefault(), "%d-%02d-%02d", year, month + 1, dayOfMonth)
         }
 
+        // created funtion to prevent dates in the past
         confirmButton.setOnClickListener {
             // Check if the selected date is not in the past
             if (!isDateInPast(selectedDate)) {

@@ -67,7 +67,7 @@ class UpcomingActivity : AppCompatActivity() {
         fetchAndDisplayAppointments()
 
     }
-
+    // created funtion to work with firebase and fetch appointments
     private fun fetchAndDisplayAppointments() {
         Log.d("UpcomingActivity", "fetchAndDisplayAppointments: Fetching appointments")
 
@@ -113,13 +113,14 @@ class UpcomingActivity : AppCompatActivity() {
         }
     }
 
-
+    // created funtion to work with new appointments
     private fun updateUIWithAppointments(appointments: List<AppointmentInfo>) {
         // Assuming you have a TextView with the id textViewAppointments in your layout
         val appointmentsText = buildAppointmentsText(appointments)
         textViewAppointments.text = appointmentsText
     }
 
+    // created funtion to work with new appointments
     private fun buildAppointmentsText(appointments: List<AppointmentInfo>): String {
         // Customize this method to format the appointment information as needed
         val builder = StringBuilder()
@@ -132,6 +133,7 @@ class UpcomingActivity : AppCompatActivity() {
         return builder.toString()
     }
 
+    // created funtion to prevent appointments in the past
     private fun isDateInPast(requestedDate: String): Boolean {
         val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
         val currentDate = getCurrentDate()

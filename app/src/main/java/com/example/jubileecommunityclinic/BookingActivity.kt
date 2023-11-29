@@ -98,6 +98,7 @@ class BookingActivity : AppCompatActivity(), DateFragment.OnDateConfirmedListene
         saveAppointmentToFirestore()
     }
 
+    // created funtion to work with firebase
     private fun saveAppointmentToFirestore() {
         val user = FirebaseAuth.getInstance().currentUser
 
