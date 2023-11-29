@@ -8,11 +8,10 @@ import java.util.*
 
 class FirebaseRequestTest {
 
-    private val firestore = FirebaseFirestore.getInstance()
-    private val auth = FirebaseAuth.getInstance()
-
     @Test
     fun testInsertAppointmentRequest() {
+        val firestore = FirebaseFirestore.getInstance()
+        val auth = FirebaseAuth.getInstance()
         val uid = auth.currentUser?.uid ?: "dummyUid"
         val idNumber = "1234567890"
         val firstName = "GitTest"
