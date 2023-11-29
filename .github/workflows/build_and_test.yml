@@ -17,13 +17,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
-          java-version: '17.0.0+35'
-
-      - name: Grant execute permission to gradlew
-        run: chmod +x gradlew
+          java-version: '11'
 
       - name: Build with Gradle
         run: ./gradlew build
 
       - name: Run Unit Tests
-        run: ./gradlew test
+        run: ./gradlew test --tests FirebaseUnitTest
