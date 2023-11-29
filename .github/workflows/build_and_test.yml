@@ -13,6 +13,9 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
 
+      - name: Grant execute permission to gradlew
+        run: chmod +x ./gradlew
+
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:
@@ -23,4 +26,4 @@ jobs:
         run: ./gradlew build
 
       - name: Run Unit Tests
-        run: ./gradlew test --tests FirebaseUnitTest
+        run: ./gradlew test
