@@ -3,18 +3,24 @@ name: Build and Test
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v2
 
-      - name: Grant execute permission to gradlew
-        run: chmod +x gradlew
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '1.8'
 
-      - name: Build and Test
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Run Unit Tests
         run: ./gradlew test
